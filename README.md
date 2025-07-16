@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prova
 
-## Getting Started
+**Prova** is a platform to securely upload and share media files with guarantees that they are **not AI-generated** and **cannot be used for training AI models**. It enables users and third parties (e.g., immigration offices, legal entities) to verify the authenticity of media through cryptographic hashing and digital certificates.
 
-First, run the development server:
+---
+
+## ✨ Project Overview
+
+In the era of generative AI, the ability to prove that a photo, video, or audio is authentic and not AI-created is increasingly important. Prova empowers creators and consumers by:
+
+- Accepting media uploads with hashing and metadata extraction
+- Generating a cryptographic proof of authenticity
+- Providing public verification URLs for trusted third parties
+- Applying anti-AI protections to prevent unauthorized AI training use
+
+---
+
+## 🚀 Features
+
+- Upload media files via a clean, responsive React UI  
+- Automatically hash uploaded files (SHA-256)  
+- Extract and display media metadata (EXIF, duration, format)  
+- Issue verifiable certificates linked to media  
+- Dynamic verification pages at `/file/[id]`  
+- API endpoints for upload, verification, and protection workflows  
+- Designed for integration with AI detection services (Glaze, Nightshade, etc.)  
+- Serverless deployment ready via Vercel  
+
+---
+
+## 🔧 Tech Stack
+
+- **Next.js (App Router) + React + TypeScript**  
+- **Vercel** for serverless deployment and hosting  
+- **Tailwind CSS** for styling  
+- **Supabase** (PostgreSQL + Storage) for database and file metadata  
+- Crypto libraries for hashing  
+- Placeholder hooks for AI detection integration  
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)  
+- Git  
+- Supabase account for backend services (optional at MVP stage)  
+
+### Setup
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/mattpotter28/prova.git
+cd prova
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set environment variables in .env.local:
+
+```ini
+SUPABASE_URL=your-supabase-url
+SUPABASE_ANON_KEY=your-supabase-anon-key
+CLOUDINARY_URL=your-cloudinary-url
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open http://localhost:3000 in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Live Demo
+https://prova-wkgn.vercel.app
